@@ -6,6 +6,9 @@ public class frog_jump {
         if(indx==0){
             return 0;
         }
+        
+        
+        
         int left=f(indx-1,heights)+Math.abs(heights[indx]-heights[indx-1]);
         int right=Integer.MAX_VALUE;
         if(indx>1){
