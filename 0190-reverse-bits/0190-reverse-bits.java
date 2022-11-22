@@ -1,13 +1,23 @@
 public class Solution {
     // you need treat n as an unsigned value
     public int reverseBits(int n) {
-        int ans=1;
+        // int ans=1;
+        // for(int i=0;i<32;i++){
+        //     ans<<=1;
+        //     ans=ans|(n&1);
+        //     n>>=1;
+        // }
+        // return ans;
+        
+        int result=0;
         for(int i=0;i<32;i++){
-            ans<<=1;
-            ans=ans|(n&1);
-            n>>=1;
+            int lsb=n&1;
+            int reverselsb=lsb<<(31-i);
+            result=result|reverselsb;
+            n=n>>1;
         }
-        return ans;
+        return result;
+        
     }
 
 }
